@@ -9,19 +9,23 @@ export function TerminalDemo() {
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400/90" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
           <span className="ml-2 font-mono text-[10px] uppercase tracking-wider text-stone-500">
-            zolks — mirror
+            zolks — trajectory check
           </span>
         </div>
         <pre className="overflow-x-auto p-4 font-mono text-[11px] leading-relaxed text-stone-200 md:text-xs">
           <code>
             <span className="text-rose-300">$</span> zolks run --env staging{"\n"}
-            <span className="text-stone-500">→ tools.schema … ok (prod parity)</span>
+            <span className="text-stone-500">→ tool.schema parity … ok</span>
             {"\n"}
             <span className="text-stone-500">→ iam.bindings … ok</span>
             {"\n"}
-            <span className="text-emerald-400/90">✓ replay trace_9c4 · 14/14 passed</span>
+            <span className="text-stone-500">→ config snapshot … ok (pinned to prod@a3f9c)</span>
             {"\n"}
-            <span className="text-stone-500">p95 latency 1.1s · est. cost $0.02/run</span>
+            <span className="text-emerald-400/90">✓ trajectory trace_9c4 · 14/14 steps valid</span>
+            {"\n"}
+            <span className="text-stone-500">→ tool calls: 6 · retries: 0 · goal reached: yes</span>
+            {"\n"}
+            <span className="text-stone-500">p95 latency 1.1s · est. cost $0.02/run · Δcost vs baseline +0%</span>
           </code>
         </pre>
       </div>

@@ -28,13 +28,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zolks — Staging that actually matches production",
+  title: "Zolks — Trajectory testing for AI agents",
   description:
-    "Mirror tools, auth, and config so your agents fail in staging, not on customers. Save engineering time and model spend.",
+    "Unit tests were built for deterministic code. Zolks gives your agents a staging environment that mirrors production — same tools, permissions, and config — so you catch failures before your customers do.",
   openGraph: {
     title: "Zolks",
     description:
-      "Prod-shaped environments for testing AI agents. Fewer incidents, faster feedback, saner bills.",
+      "Trajectory testing and environment parity for AI agents. Catch tool loop failures, cost blowouts, and scope violations in staging.",
     type: "website",
   },
 };

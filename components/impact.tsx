@@ -13,61 +13,68 @@ export function Impact() {
             id="impact-heading"
             className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl"
           >
-            Less thrash. Fewer surprises on the bill.
+            The existing testing playbook wasn&apos;t built for this.
           </h2>
           <p className="mt-4 text-lg text-ink-soft">
-            Most agent pain isn&apos;t the model. It&apos;s the gap between &ldquo;works on my
-            laptop&rdquo; and &ldquo;works with our real APIs and roles.&rdquo; Zolks is aimed at
-            closing that gap so your team spends time shipping, not firefighting.
+            AI agents fail differently than APIs. A 200 response doesn&apos;t mean the
+            agent did the right thing. It might have called the wrong tool twelve
+            times, burned five dollars in tokens, and still returned something
+            that looks correct. Zolks is built to catch that — in staging, not in
+            production.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-12">
           <article className="relative border-l-4 border-accent pl-6">
-            <h3 className="font-display text-xl font-semibold text-ink">Time back for builders</h3>
+            <h3 className="font-display text-xl font-semibold text-ink">Catch failures that unit tests miss</h3>
             <ul className="mt-4 space-y-3 text-ink-soft">
               <li>
-                <strong className="font-medium text-ink">Fewer prod-only bugs.</strong> Catch
-                schema drift, IAM mistakes, and bad tool loops where logs are still readable.
+                <strong className="font-medium text-ink">Trajectory assertions.</strong> Define
+                what a valid sequence of steps looks like. Flag agents that reach
+                the goal the wrong way — too many retries, wrong tool order,
+                unexpected branching.
               </li>
               <li>
-                <strong className="font-medium text-ink">Shorter debug loops.</strong> Replay
-                traces against a surface that matches prod so you&apos;re not guessing which
-                variable differed.
+                <strong className="font-medium text-ink">Prod-shape replay.</strong> Bring
+                redacted production traces into staging and replay them against a
+                mirrored environment. The failure mode your agent hit in prod is
+                reproducible now.
               </li>
               <li>
-                <strong className="font-medium text-ink">Confident releases.</strong> CI that
-                understands agent trajectories, not only unit tests, means less manual babysitting
-                before a push.
+                <strong className="font-medium text-ink">Scope enforcement.</strong> Know
+                immediately when an agent attempts a tool call outside its declared
+                permissions — before it matters.
               </li>
             </ul>
           </article>
 
           <article className="relative border-l-4 border-sage pl-6">
-            <h3 className="font-display text-xl font-semibold text-ink">Saner spend</h3>
+            <h3 className="font-display text-xl font-semibold text-ink">Ship with confidence, not hope</h3>
             <ul className="mt-4 space-y-3 text-ink-soft">
               <li>
-                <strong className="font-medium text-ink">Stop paying to learn in production.</strong>{" "}
-                Bad retries and runaway tool calls burn tokens and GPU minutes. Fail cheap in
-                staging first.
+                <strong className="font-medium text-ink">Cost gates in CI.</strong>{" "}
+                Block merges when p99 token cost regresses or the agent takes
+                more steps than baseline. Catch spend blowouts before they hit
+                production.
               </li>
               <li>
-                <strong className="font-medium text-ink">Fewer incident hours.</strong> On-call
-                time and rollback work add up fast. Reducing escaped defects is the straightest
-                line to lower cost for many teams.
+                <strong className="font-medium text-ink">Environment parity.</strong> Same
+                tool schemas, IAM bindings, and config snapshots as production.
+                Staging stops being a parallel universe.
               </li>
               <li>
-                <strong className="font-medium text-ink">No vanity benchmarks.</strong> We care
-                about outcomes you can defend in a budget review, not leaderboard scores.
+                <strong className="font-medium text-ink">No vanity metrics.</strong> We care
+                about goal completion rate, step efficiency, and cost per task —
+                numbers you can defend in a postmortem.
               </li>
             </ul>
           </article>
         </div>
 
         <p className="mt-12 max-w-2xl border-t border-ink/10 pt-8 text-sm leading-relaxed text-muted">
-          Every org&apos;s numbers differ. The point isn&apos;t a promise of &ldquo;37% faster.&rdquo;
-          It&apos;s giving you an environment honest enough that you can measure your own before
-          and after.
+          Every team&apos;s failure modes differ. The point isn&apos;t to promise a
+          specific number. It&apos;s to give you an environment honest enough that
+          you can find the real ones before your customers do.
         </p>
       </div>
     </section>

@@ -1,23 +1,23 @@
 const phases = [
   {
     n: "01",
-    title: "Parity surface",
-    body: "Same tool gateways, API shapes, and IAM as production. Config snapshots per release so staging is not a parallel universe.",
+    title: "Environment parity",
+    body: "Mirror production exactly — tool schemas, IAM bindings, API shapes, and config snapshots pinned per release. Staging stops being a guessing game.",
   },
   {
     n: "02",
-    title: "Traces & fixtures",
-    body: "Bring redacted prod traces home. Replay tool calls, add golden paths, mock only where determinism matters.",
+    title: "Trajectory testing",
+    body: "Assert on sequences, not just outputs. Define what valid step patterns look like, set cost and latency budgets per task, and replay redacted prod traces in staging.",
   },
   {
     n: "03",
-    title: "Plugins",
-    body: "Adapters for the stacks you already run. Extend without forking the core.",
+    title: "CI/CD gates",
+    body: "Block merges when goal completion rate drops, cost regresses, or the agent touches tools outside its declared scope. Quality enforcement without the manual review.",
   },
   {
     n: "04",
-    title: "Evals & gates",
-    body: "Schema checks, trajectory assertions, cost and latency budgets. Let CI block merges that fail your bar.",
+    title: "Integrations",
+    body: "Native adapters for the orchestration frameworks and observability stacks you already run. Extend without forking the core.",
   },
 ];
 

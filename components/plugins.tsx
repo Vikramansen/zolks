@@ -1,27 +1,27 @@
 const plugins = [
   {
     name: "LangGraph / LangChain",
-    note: "Graphs and tool definitions wired through mirrored gateways.",
+    note: "Trajectory tracing and tool gateway mirroring for graph-based agent workflows.",
   },
   {
-    name: "OpenAI tools",
-    note: "Schema parity and recorded modes for assistants and tool loops.",
+    name: "Any OpenAI-compatible API",
+    note: "Schema parity and recorded modes for any runtime using the chat completions or responses API.",
   },
   {
     name: "HTTP & OpenAPI",
-    note: "Contract tests for REST your agents depend on.",
+    note: "Contract tests for the REST tools your agents depend on — mock only where determinism matters.",
   },
   {
     name: "OpenTelemetry",
-    note: "Spans per model step and tool call into your existing APM.",
+    note: "One span per model step and tool call, piped into your existing APM without custom instrumentation.",
   },
   {
     name: "GitHub Actions",
-    note: "Parity suites on PRs, failed trajectories as artifacts.",
+    note: "Trajectory assertions and cost gates on every PR. Failed runs surface as artifacts, not incidents.",
   },
   {
     name: "Slack / PagerDuty",
-    note: "Ping humans when drift or thresholds trip in staging.",
+    note: "Alert humans when drift, cost regression, or scope violations trip in staging — not in prod.",
   },
 ];
 
@@ -37,10 +37,10 @@ export function Plugins() {
           id="plugins-heading"
           className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl"
         >
-          Plugins
+          Integrations
         </h2>
         <p className="mt-3 max-w-xl text-lg text-ink-soft">
-          Plugs into what you already use. Nothing here ships until it earns its keep.
+          Plugs into the stack you already run. Nothing ships until it earns its keep.
         </p>
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {plugins.map((p) => (
