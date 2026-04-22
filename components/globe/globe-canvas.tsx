@@ -99,7 +99,11 @@ export function GlobeCanvas({ problemIntensity, dimmed }: GlobeCanvasProps) {
 
   return (
     <div className="globe-backdrop">
-      <Canvas camera={{ position: [0, 0, 6.1], fov: 42 }} dpr={[1, 1.4]} gl={{ antialias: false }}>
+      <Canvas
+        camera={{ position: [0, 0, 6.1], fov: 42 }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+      >
         <GlobeScene scrollSpeed={scrollSpeed} spawnRate={spawnRate} dimmed={dimmed} />
       </Canvas>
     </div>

@@ -69,6 +69,7 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  background: radial-gradient(circle at 74% 50%, transparent 42%, rgba(10, 10, 10, 0.72) 100%);
 }
 
 .eyebrow-label {
