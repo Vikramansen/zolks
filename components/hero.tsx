@@ -53,7 +53,7 @@ export function Hero() {
               GitHub repo ↗
             </Link>
             <Link
-              href="https://github.com/Vikramansen/zolks-python/tree/main/docs"
+              href="https://github.com/Vikramansen/zolks-python#readme"
               target="_blank"
               rel="noreferrer"
               className="rounded-none border border-border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted transition hover:border-accent hover:text-accent"
