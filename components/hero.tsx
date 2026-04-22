@@ -1,29 +1,51 @@
-import { SquiggleRule, StampWip, BlobAccent } from "./decorative";
+"use client";
+
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function Hero() {
+  const reduceMotion = useReducedMotion();
+  const shouldAnimate = !reduceMotion;
+
   return (
-    <section className="relative mx-auto max-w-6xl px-5 pb-16 pt-10 md:px-8 md:pb-24 md:pt-14">
-      <BlobAccent className="right-0 top-20 h-64 w-64 md:h-80 md:w-80" />
-      <div className="relative max-w-3xl">
-        <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-          Agent testing infrastructure · Made in San Francisco
-        </p>
-        <h1 className="font-display text-[2.1rem] font-semibold leading-[1.12] tracking-[-0.02em] text-ink md:text-5xl md:leading-[1.08]">
-          Unit tests were built for deterministic code. Your agents aren&apos;t that.
-        </h1>
-        <SquiggleRule className="my-8 w-48 text-accent" />
-        <p className="max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl">
-          Zolks gives your agents a staging environment that actually behaves like
-          production — same tools, same permissions, same config. Catch trajectory
-          failures, runaway tool loops, and cost blowouts before your customers do.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center gap-6">
-          <StampWip />
-          <p className="max-w-xs text-sm italic leading-snug text-muted">
-            Building in the open. Early shapes, honest tradeoffs.
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center border-b border-border/80"
+    >
+      <div className="content-shell mx-auto grid w-full max-w-6xl gap-12 px-6 py-20 md:grid-cols-[minmax(0,600px)_1fr] md:px-10">
+        <motion.div
+          className="reveal-root max-w-xl space-y-6"
+          initial={shouldAnimate ? { opacity: 0, y: 20 } : undefined}
+          whileInView={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
+          viewport={shouldAnimate ? { once: true, amount: 0.45 } : undefined}
+          transition={shouldAnimate ? { duration: 0.45, ease: [0.22, 1, 0.36, 1] } : undefined}
+        >
+          <p className="eyebrow-label">Cost observability for agents · Made in San Francisco</p>
+          <h1 className="font-display text-[2.5rem] font-medium leading-[1.06] text-text md:text-[3.5rem]">
+            Your agents are burning tokens right now.
+          </h1>
+          <p className="max-w-lg text-[1.125rem] leading-relaxed text-text-muted">
+            Zolks shows you which ones. In real time, with the context to actually fix it.
           </p>
-        </div>
+          <div className="flex flex-wrap gap-3 pt-3">
+            <Link
+              href="#join"
+              className="rounded-none border border-accent bg-accent px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-black transition hover:bg-accent-dim"
+            >
+              Get on the waitlist
+            </Link>
+            <Link
+              href="/docs"
+              className="rounded-none border border-border px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-text transition hover:border-accent hover:text-accent"
+            >
+              Read the docs →
+            </Link>
+          </div>
+        </motion.div>
+        <div className="hidden md:block" aria-hidden />
       </div>
     </section>
   );
 }
+
+export default Hero;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Fraunces, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import { Fraunces, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,12 +15,6 @@ const ibmPlex = IBM_Plex_Sans({
   display: "swap",
 });
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-});
-
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
@@ -28,13 +22,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zolks — Trajectory testing for AI agents",
+  title: "Zolks — Cost observability for AI agents",
   description:
-    "Unit tests were built for deterministic code. Zolks gives your agents a staging environment that mirrors production — same tools, permissions, and config — so you catch failures before your customers do.",
+    "Your agents are burning tokens right now. Zolks shows you which ones in real time, with the context to actually fix it.",
   openGraph: {
     title: "Zolks",
     description:
-      "Trajectory testing and environment parity for AI agents. Catch tool loop failures, cost blowouts, and scope violations in staging.",
+      "Cost observability for agents. Attribute spend, detect anomalies, and stop runaway loops before the bill lands.",
     type: "website",
   },
 };
@@ -47,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlex.variable} ${caveat.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${ibmPlex.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="relative min-h-full overflow-x-hidden">{children}</body>
     </html>
