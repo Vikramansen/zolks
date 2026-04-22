@@ -84,10 +84,6 @@ body {
   will-change: transform, opacity;
 }
 
-.provider-strip li {
-  min-height: 44px;
-}
-
 .terminal-card {
   border: 1px solid var(--border);
   background: var(--bg-elevated);

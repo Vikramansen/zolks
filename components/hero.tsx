@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ProviderStrip } from "@/components/provider-strip";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -40,25 +39,6 @@ export function Hero() {
               className="rounded-none border border-border px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-text transition hover:border-accent hover:text-accent"
             >
               Read the docs →
-            </Link>
-          </div>
-          <ProviderStrip />
-          <div className="flex flex-wrap gap-3 pt-1">
-            <Link
-              href="https://github.com/Vikramansen/zolks-python.git"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-none border border-border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted transition hover:border-accent hover:text-accent"
-            >
-              GitHub repo ↗
-            </Link>
-            <Link
-              href="https://github.com/Vikramansen/zolks-python#readme"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-none border border-border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted transition hover:border-accent hover:text-accent"
-            >
-              SDK docs ↗
             </Link>
           </div>
         </motion.div>
